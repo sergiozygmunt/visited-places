@@ -21,4 +21,5 @@ CITIES =
    {name: 'Troy', latitude: 42.7284, longitude: -73.6918, radius: 3, fillKey: 'city', date: 'January 2016, March 2016, March 2017'},
    {name: 'Washington DC', latitude: 38.9072, longitude: -77.0369, radius: 3, fillKey: 'city', date: 'August 2017'},
    {name: 'Baltimore MD', latitude: 39.2904, longitude: -76.6122, radius: 3, fillKey: 'city', date: 'November 2021'},
+   {name: 'Allen TX', latitude: 33.1031, longitude: -96.6705, radius: 3, fillKey: 'city', date: 'February 2022'},
 ]
