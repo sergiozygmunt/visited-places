@@ -9,7 +9,7 @@ CITIES =
    {name: 'Boryspil', latitude: 50.35, longitude: 30.95, radius: 3, fillKey: 'city', date: 'August 2006'},
    {name: 'Danbury', latitude: 41.3948, longitude: -73.4540, radius: 3, fillKey: 'city', date: 'May 2015'},
    {name: 'San Francisco', latitude: 37.7749, longitude: -122.4194, radius: 3, fillKey: 'city', date: 'August 2016, September 2018; March 2021'},
-   {name: 'Rome', latitude: 41.9028, longitude: 12.4964, radius: 3, fillKey: 'city', date: 'August 2007, June 2012'},
+   {name: 'Rome', latitude: 41.9028, longitude: 12.4964, radius: 3, fillKey: 'city', date: 'August 2007, July 2012'},
    {name: 'Orlando', latitude: 28.5384, longitude: -81.3789, radius: 3, fillKey: 'city', date: 'July 2014'},
    {name: 'Las Vegas', latitude: 36.1699, longitude: -115.1398, radius: 3, fillKey: 'city', date: 'September 2021, August 2022, November 2022; December 2022'},
    {name: 'Vernon', latitude: 43.074333036 , longitude: -75.537331184, radius: 3, fillKey: 'city', date: 'April 2018, May 2018'},
