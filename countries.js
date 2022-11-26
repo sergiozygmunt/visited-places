@@ -5,5 +5,7 @@ COUNTRIES =
     USA: {fillKey: 'visited'},
     CAN: {fillKey: 'visited'},
     UKR: {fillKey: 'visited'},
-    
+    POL: {fillKey: 'visited'},
+    DEU: {fillKey: 'visited'},
+    HUN: {fillKey: 'visited'},
 }

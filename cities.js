@@ -5,7 +5,8 @@ CITIES =
    // Not really a city, but we define just one type of "POI" (fillKey here) in index.html, you can define more.
    {name: 'Chicago', latitude: 41.878113, longitude: -87.629799, radius: 3, fillKey: 'city', date: 'September 2019'},
    {name: 'Toronto', latitude: 43.6532, longitude: -79.3832, radius: 3, fillKey: 'city', date: 'October 2017, May 2018'},
-   {name: 'Kryvyi Rih', latitude: 47.9105, longitude: 33.3918, radius: 3, fillKey: 'city', date: 'August 2007, June 2017'},
+   {name: 'Kryvyi Rih', latitude: 47.9105, longitude: 33.3918, radius: 3, fillKey: 'city', date: 'August 2006, June 2017'},
+   {name: 'Boryspil', latitude: 50.35, longitude: 30.95, radius: 3, fillKey: 'city', date: 'August 2006'},
    {name: 'Danbury', latitude: 41.3948, longitude: -73.4540, radius: 3, fillKey: 'city', date: 'May 2015'},
    {name: 'San Francisco', latitude: 37.7749, longitude: -122.4194, radius: 3, fillKey: 'city', date: 'August 2016, September 2018; March 2021'},
    {name: 'Rome', latitude: 41.9028, longitude: 12.4964, radius: 3, fillKey: 'city', date: 'August 2007, June 2012'},
@@ -22,4 +23,7 @@ CITIES =
    {name: 'Washington DC', latitude: 38.9072, longitude: -77.0369, radius: 3, fillKey: 'city', date: 'August 2017'},
    {name: 'Baltimore MD', latitude: 39.2904, longitude: -76.6122, radius: 3, fillKey: 'city', date: 'November 2021'},
    {name: 'Allen TX', latitude: 33.1031, longitude: -96.6705, radius: 3, fillKey: 'city', date: 'February 2022'},
+   {name: 'Warsaw', latitude: 52.23, longitude: 21.011111, radius: 3, fillKey: 'city', date: 'December 2001'},
+   {name: 'Munich', latitude: 48.122954, longitude: 11.531178, radius: 3, fillKey: 'city', date: 'August 2004; August 2006'},
+   {name: 'Budapest', latitude: 47.4925, longitude: 19.051389, radius: 3, fillKey: 'city', date: 'August 2006'},
 ]
