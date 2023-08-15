@@ -26,4 +26,5 @@ CITIES =
    {name: 'Warsaw', latitude: 52.23, longitude: 21.011111, radius: 3, fillKey: 'city', date: 'December 2001'},
    {name: 'Munich', latitude: 48.122954, longitude: 11.531178, radius: 3, fillKey: 'city', date: 'August 2004; August 2006'},
    {name: 'Budapest', latitude: 47.4925, longitude: 19.051389, radius: 3, fillKey: 'city', date: 'August 2006'},
+   {name: 'Austin', latitude: 30.2672, longitude: 97.7431, radius: 3, fillKey: 'city', date: 'August 2023'},
 ]
