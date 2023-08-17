@@ -124,13 +124,30 @@
                     borderColor: '#000000',
                     color: 'transparent'
                 })
+
+                layer.bindTooltip(`${feature.properties.ADMIN} (Visited)`, {
+                    permanent: false,
+                    className: 'country-label',
+                    sticky: true,
+                });
+
             } else {
                 layer.setStyle({
                     fillColor: '#5e5e5e',
                     opacity: 1,
                     color: 'transparent'
                 })
+
+                layer.bindTooltip(`${feature.properties.ADMIN}`, {
+                    permanent: false,
+                    className: 'country-label',
+                    sticky: true,
+                });
+
             }
+
+            // add a tooltip to each country
+
         }
 
         CITIES.forEach((city) => {
@@ -182,6 +199,11 @@
                 <p><strong>${city.name}</strong></p>
                 <p> Visited on ${dateStr}</p>
                 `)
+                .bindTooltip(`${city.name} (Visited)`, {
+                    permanent: false,
+                    className: 'city-label',
+                    sticky: true,
+                })
                 .addTo(map);
         })
         /*
