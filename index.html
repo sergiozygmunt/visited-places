@@ -104,104 +104,108 @@
             attribution: '© OpenStreetMap'
         }).addTo(map);
 
-        // Add a GeoJSON layer from the /layers/countries.geojson.js files
-        L.geoJson(COUNTRY_LAYER, {
-            onEachFeature: onEachFeature
-        }).addTo(map);
+        async function addStuffs() {
+            // Add a GeoJSON layer from the /layers/countries.geojson.js files
+            L.geoJson(COUNTRY_LAYER, {
+                onEachFeature: onEachFeature
+            }).addTo(map);
 
 
-        function onEachFeature(feature, layer) {
-            if (COUNTRIES[feature.properties.ISO_A3]) {
-                //console.log(COUNTRIES[feature.properties.ISO_A3]);
+            function onEachFeature(feature, layer) {
+                if (COUNTRIES[feature.properties.ISO_A3]) {
+                    //console.log(COUNTRIES[feature.properties.ISO_A3]);
 
-                layer.setStyle({
-                    fillColor: '#ffffff',
-                    opacity: 1,
-                    borderColor: '#000000',
-                    color: 'transparent'
-                })
+                    layer.setStyle({
+                        fillColor: '#ffffff',
+                        opacity: 1,
+                        borderColor: '#000000',
+                        color: 'transparent'
+                    })
 
-                layer.bindTooltip(`${feature.properties.ADMIN} (Visited)`, {
-                    permanent: false,
-                    className: 'country-label',
-                    sticky: true,
-                });
+                    layer.bindTooltip(`${feature.properties.ADMIN} (Visited)`, {
+                        permanent: false,
+                        className: 'country-label',
+                        sticky: true,
+                    });
 
-            } else {
-                layer.setStyle({
-                    fillColor: '#5e5e5e',
-                    opacity: 1,
-                    color: 'transparent'
-                })
+                } else {
+                    layer.setStyle({
+                        fillColor: '#5e5e5e',
+                        opacity: 1,
+                        color: 'transparent'
+                    })
 
-                layer.bindTooltip(`${feature.properties.ADMIN}`, {
-                    permanent: false,
-                    className: 'country-label',
-                    sticky: true,
-                });
+                    layer.bindTooltip(`${feature.properties.ADMIN}`, {
+                        permanent: false,
+                        className: 'country-label',
+                        sticky: true,
+                    });
+
+                }
+
+                // add a tooltip to each country
 
             }
 
-            // add a tooltip to each country
-
-        }
-
-        CITIES.forEach((city) => {
+            CITIES.forEach((city) => {
 
 
-            let dates = [];
+                let dates = [];
 
-            city.date.split(',').forEach((date) => {
-                dates.push(date);
-            })
+                city.date.split(',').forEach((date) => {
+                    dates.push(date);
+                })
 
-            // check if the dates array has any value that contains a semicolon and split that into two separate dates
-            dates.forEach((date, index) => {
-                if (date.includes(';')) {
-                    dates.splice(index, 1);
-                    date.split(';').forEach((date) => {
-                        dates.push(date);
-                    })
-                }
-            })
+                // check if the dates array has any value that contains a semicolon and split that into two separate dates
+                dates.forEach((date, index) => {
+                    if (date.includes(';')) {
+                        dates.splice(index, 1);
+                        date.split(';').forEach((date) => {
+                            dates.push(date);
+                        })
+                    }
+                })
 
-            // now trim each value in the array so that there are no spaces at the beginning or end
-            dates.forEach((date, index) => {
-                dates[index] = date.trim();
-            })
+                // now trim each value in the array so that there are no spaces at the beginning or end
+                dates.forEach((date, index) => {
+                    dates[index] = date.trim();
+                })
 
-            // sort by the numbers after the space by highest first
-            dates.sort((a, b) => {
-                return b.split(' ')[1] - a.split(' ')[1];
-            })
+                // sort by the numbers after the space by highest first
+                dates.sort((a, b) => {
+                    return b.split(' ')[1] - a.split(' ')[1];
+                })
 
-            //console.log(dates);
+                //console.log(dates);
 
-            // with the dates array, join them together with a comma and space with the last comma and space replaced with 'and '
-            let dateStr = String(dates.join(', ')).replace(/,([^,]*)$/, ' and $1');
+                // with the dates array, join them together with a comma and space with the last comma and space replaced with 'and '
+                let dateStr = String(dates.join(', ')).replace(/,([^,]*)$/, ' and $1');
 
 
 
-            L.circleMarker([city.latitude, city.longitude], {
-                radius: 5,
-                fillColor: "#ff7800",
-                color: "#000",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8,
-                riseOnHover: true,
-            })
-                .bindPopup(`
+                L.circleMarker([city.latitude, city.longitude], {
+                    radius: 5,
+                    fillColor: "#ff7800",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8,
+                    riseOnHover: true,
+                })
+                    .bindPopup(`
                 <p><strong>${city.name}</strong></p>
                 <p> Visited on ${dateStr}</p>
                 `)
-                .bindTooltip(`${city.name} (Visited)`, {
-                    permanent: false,
-                    className: 'city-label',
-                    sticky: true,
-                })
-                .addTo(map);
-        })
+                    .bindTooltip(`${city.name} (Visited)`, {
+                        permanent: false,
+                        className: 'city-label',
+                        sticky: true,
+                    })
+                    .addTo(map);
+            })
+        }
+
+        addStuffs();
         /*
 
          */
