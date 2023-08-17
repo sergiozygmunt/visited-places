@@ -1,18 +1,12 @@
 <!DOCTYPE html>
+<html lang="en-US">
 <meta charset="utf-8">
 <head>
-    <title>Visited Places | Sergio Zygmunt</title>
-    <script src="d3/d3.v3.min.js"></script>
-    <script src="d3/topojson.v1.min.js"></script>
-    <script src="datamaps/datamaps.world.min.js"></script>
-
-</head>    
-<body>
-    <html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home | Sergio Zygmunt</title>
+    <title>Visited Places | Sergio Zygmunt</title>
     <meta name="description" content="Sergio Zygmunt">
     <link rel="shortcut icon" type="image/ico" href="https://sergiozygmunt.com/assets/uswds/img/favicons/favicon.ico">
     <link rel="icon" type="image/png" href="https://sergiozygmunt.com/assets/uswds/img/favicons/favicon.png">
@@ -22,7 +16,21 @@
     <link rel="apple-touch-icon-precomposed" type="" sizes="114x114" href="https://sergiozygmunt.com/assets/uswds/img/favicons/favicon-114.png">
     <link rel="apple-touch-icon-precomposed" type="" sizes="144x144" href="https://sergiozygmunt.com/assets/uswds/img/favicons/favicon-144.png">
     <style class="anchorjs"></style><link rel="stylesheet" href="./main.css" media="screen">
-    </head>
+    <link rel="stylesheet" href="/lib/http_unpkg.com_leaflet@1.9.4_dist_leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <script src="/lib/http_unpkg.com_leaflet@1.9.4_dist_leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
+    <style>
+        #map { height: 84.5vh; }
+        .leaflet-container { font-size: 1.4rem; }
+    </style>
+</head>
+<body>
+
+
     <body class="  ">
     <a class="usa-skipnav" href="https://sergiozygmunt.com/#main-content">Skip to main content</a>
     <section class="usa-banner">
@@ -73,20 +81,138 @@
         <span>Open Source Software Disclosure</span>
         </a>
         </li>
-    
+    </ul>
     </div>
-    </div>
-    
+
     </nav>
     </header>
 
-    <div id="map1" style="position: relative;"></div>
+    <div id="map" style="position: relative;"></div>
 
-    <script src="countries.js"></script>
-    <script src="cities.js"></script>
+    <script src="places/countries.js"></script>
+    <script src="places/cities.js"></script>
+
+    <script src="layers/countries.geojson.js"></script>
 
     <script>
+        var map = L
+            .map('map', {
+                //dragging: false,
+                //panControl: false,
+            })
+            .setView([25, 0], 2.75)
+            .setMaxBounds(  [[-90,-180],   [90,180]]  );
 
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Add a GeoJSON layer from the /layers/countries.geojson.js files
+        L.geoJson(COUNTRY_LAYER, {
+            onEachFeature: onEachFeature
+        }).addTo(map);
+
+
+        function onEachFeature(feature, layer) {
+            if (COUNTRIES[feature.properties.ISO_A3]) {
+                //console.log(COUNTRIES[feature.properties.ISO_A3]);
+
+                layer.setStyle({
+                    fillColor: '#ffffff',
+                    opacity: 1,
+                    borderColor: '#000000',
+                    color: 'transparent'
+                })
+
+                layer.bindTooltip(`${feature.properties.ADMIN} (Visited)`, {
+                    permanent: false,
+                    className: 'country-label',
+                    sticky: true,
+                });
+
+            } else {
+                layer.setStyle({
+                    fillColor: '#5e5e5e',
+                    opacity: 1,
+                    color: 'transparent'
+                })
+
+                layer.bindTooltip(`${feature.properties.ADMIN}`, {
+                    permanent: false,
+                    className: 'country-label',
+                    sticky: true,
+                });
+
+            }
+
+            // add a tooltip to each country
+
+        }
+
+        CITIES.forEach((city) => {
+
+
+            let dates = [];
+
+            city.date.split(',').forEach((date) => {
+                dates.push(date);
+            })
+
+            // check if the dates array has any value that contains a semicolon and split that into two separate dates
+            dates.forEach((date, index) => {
+                if (date.includes(';')) {
+                    dates.splice(index, 1);
+                    date.split(';').forEach((date) => {
+                        dates.push(date);
+                    })
+                }
+            })
+
+            // now trim each value in the array so that there are no spaces at the beginning or end
+            dates.forEach((date, index) => {
+                dates[index] = date.trim();
+            })
+
+            // sort by the numbers after the space by highest first
+            dates.sort((a, b) => {
+                return b.split(' ')[1] - a.split(' ')[1];
+            })
+
+            //console.log(dates);
+
+            // with the dates array, join them together with a comma and space with the last comma and space replaced with 'and '
+            let dateStr = String(dates.join(', ')).replace(/,([^,]*)$/, ' and $1');
+
+
+
+            L.circleMarker([city.latitude, city.longitude], {
+                radius: 5,
+                fillColor: "#ff7800",
+                color: "#000",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8,
+                riseOnHover: true,
+            })
+                .bindPopup(`
+                <p><strong>${city.name}</strong></p>
+                <p> Visited on ${dateStr}</p>
+                `)
+                .bindTooltip(`${city.name} (Visited)`, {
+                    permanent: false,
+                    className: 'city-label',
+                    sticky: true,
+                })
+                .addTo(map);
+        })
+        /*
+
+         */
+
+
+
+        /*
     var map = new Datamap({
         scope: 'world',
         element: document.getElementById('map1'),
@@ -125,6 +251,7 @@
     window.addEventListener('resize', function() {
         map.resize();
     });
+         */
 
     </script>
 </body>
