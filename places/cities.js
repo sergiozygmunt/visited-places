@@ -19,7 +19,7 @@
    {name: 'Indianapolis', latitude: 39.7684, longitude: -86.1581, radius: 3, fillKey: 'city', date: 'April 2021'},
    {name: 'Cincinnati', latitude: 39.1031, longitude: -84.5120, radius: 3, fillKey: 'city', date: 'April 2021'},
    {name: 'Philadelphia', latitude: 39.9526, longitude: -75.1652, radius: 3, fillKey: 'city', date: 'May 2018'},
-   {name: 'Troy', latitude: 42.7284, longitude: -73.6918, radius: 3, fillKey: 'city', date: 'January 2016, March 2016, March 2017'},
+   {name: 'Troy', latitude: 42.7284, longitude: -73.6918, radius: 3, fillKey: 'city', date: 'January 2016, March 2016, March 2017, March 2018'},
    {name: 'Washington DC', latitude: 38.9072, longitude: -77.0369, radius: 3, fillKey: 'city', date: 'August 2017'},
    {name: 'Baltimore MD', latitude: 39.2904, longitude: -76.6122, radius: 3, fillKey: 'city', date: 'November 2021'},
    {name: 'Allen TX', latitude: 33.1031, longitude: -96.6705, radius: 3, fillKey: 'city', date: 'February 2022'},
