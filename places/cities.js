@@ -22,6 +22,7 @@
    {name: 'Troy', latitude: 42.7284, longitude: -73.6918, radius: 3, fillKey: 'city', date: 'January 2016, March 2016, March 2017, March 2018'},
    {name: 'Washington DC', latitude: 38.9072, longitude: -77.0369, radius: 3, fillKey: 'city', date: 'August 2017'},
    {name: 'Baltimore MD', latitude: 39.2904, longitude: -76.6122, radius: 3, fillKey: 'city', date: 'November 2021'},
+   {name: 'Alexandria VA', latitude: 38.8048, longitude: -77.0469, radius: 3, fillKey: 'city', date: 'May 2013'},
    {name: 'Allen TX', latitude: 33.1031, longitude: -96.6705, radius: 3, fillKey: 'city', date: 'February 2022'},
    {name: 'Warsaw', latitude: 52.23, longitude: 21.011111, radius: 3, fillKey: 'city', date: 'December 2001'},
    {name: 'Munich', latitude: 48.122954, longitude: 11.531178, radius: 3, fillKey: 'city', date: 'August 2004; August 2006'},
