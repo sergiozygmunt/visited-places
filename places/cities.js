@@ -1,6 +1,6 @@
    CITIES =
 [
-   {name: 'Rochester', latitude: 43.155708, longitude: -77.612549, radius: 3, fillKey: 'city', date: 'August 2017, August 2021; November 2022'},
+   {name: 'Rochester', latitude: 43.155708, longitude: -77.612549, radius: 3, fillKey: 'city', date: 'August 2017, August 2021; November 2022, September 2023'},
    {name: 'Wilmington', latitude: 39.739071, longitude: -75.539787, radius: 3, fillKey: 'city', date: 'June 2017, December 2017; May 2018'},
    // Not really a city, but we define just one type of "POI" (fillKey here) in index.html, you can define more.
    {name: 'Chicago', latitude: 41.878113, longitude: -87.629799, radius: 3, fillKey: 'city', date: 'September 2019'},
@@ -8,12 +8,12 @@
    {name: 'Kryvyi Rih', latitude: 47.9105, longitude: 33.3918, radius: 3, fillKey: 'city', date: 'August 2006, June 2017'},
    {name: 'Boryspil', latitude: 50.35, longitude: 30.95, radius: 3, fillKey: 'city', date: 'August 2006'},
    {name: 'Danbury', latitude: 41.3948, longitude: -73.4540, radius: 3, fillKey: 'city', date: 'May 2015'},
-   {name: 'San Francisco', latitude: 37.7749, longitude: -122.4194, radius: 3, fillKey: 'city', date: 'August 2016, September 2018; March 2021'},
+   {name: 'San Francisco', latitude: 37.7749, longitude: -122.4194, radius: 3, fillKey: 'city', date: 'August 2016, September 2018; March 2021, March 2024'},
    {name: 'Rome', latitude: 41.9028, longitude: 12.4964, radius: 3, fillKey: 'city', date: 'August 2007, July 2012'},
    {name: 'Orlando', latitude: 28.5384, longitude: -81.3789, radius: 3, fillKey: 'city', date: 'July 2014'},
    {name: 'Las Vegas', latitude: 36.1699, longitude: -115.1398, radius: 3, fillKey: 'city', date: 'September 2021, August 2022, November 2022; December 2022'},
    {name: 'Vernon', latitude: 43.074333036 , longitude: -75.537331184, radius: 3, fillKey: 'city', date: 'April 2018, May 2018'},
-   {name: 'Los Angeles', latitude: 33.9416, longitude: -118.4085, radius: 3, fillKey: 'city', date: 'July 2011'},
+   {name: 'Los Angeles', latitude: 33.9416, longitude: -118.4085, radius: 3, fillKey: 'city', date: 'July 2011, April 2024, May 2024'},
    {name: 'Aliso Viejo', latitude: 33.5685, longitude: -117.7263, radius: 3, fillKey: 'city', date: 'July 2011, August 2016'},
    {name: 'Boston', latitude: 42.3601, longitude: -71.0589, radius: 3, fillKey: 'city', date: 'July 2016, March 2021'},
    {name: 'Indianapolis', latitude: 39.7684, longitude: -86.1581, radius: 3, fillKey: 'city', date: 'April 2021'},
