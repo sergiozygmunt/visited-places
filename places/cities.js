@@ -13,7 +13,7 @@
    {name: 'Orlando', latitude: 28.5384, longitude: -81.3789, radius: 3, fillKey: 'city', date: 'July 2014'},
    {name: 'Las Vegas', latitude: 36.1699, longitude: -115.1398, radius: 3, fillKey: 'city', date: 'September 2021, August 2022, November 2022; December 2022'},
    {name: 'Vernon', latitude: 43.074333036 , longitude: -75.537331184, radius: 3, fillKey: 'city', date: 'April 2018, May 2018'},
-   {name: 'Los Angeles', latitude: 33.9416, longitude: -118.4085, radius: 3, fillKey: 'city', date: 'July 2011, April 2024, May 2024'},
+   {name: 'Los Angeles', latitude: 33.9416, longitude: -118.4085, radius: 3, fillKey: 'city', date: 'July 2011, April 2024, May 2024, June 2024'},
    {name: 'Aliso Viejo', latitude: 33.5685, longitude: -117.7263, radius: 3, fillKey: 'city', date: 'July 2011, August 2016'},
    {name: 'Boston', latitude: 42.3601, longitude: -71.0589, radius: 3, fillKey: 'city', date: 'July 2016, March 2021'},
    {name: 'Indianapolis', latitude: 39.7684, longitude: -86.1581, radius: 3, fillKey: 'city', date: 'April 2021'},
@@ -28,4 +28,5 @@
    {name: 'Munich', latitude: 48.122954, longitude: 11.531178, radius: 3, fillKey: 'city', date: 'August 2004; August 2006'},
    {name: 'Budapest', latitude: 47.4925, longitude: 19.051389, radius: 3, fillKey: 'city', date: 'August 2006'},
    {name: 'Austin', latitude: 30.2672, longitude: -97.7431, radius: 3, fillKey: 'city', date: 'August 2023'},
+   {name: 'Kansas City', latitude: 39.1155, longitude: -94.6268, radius: 3, fillKey: 'city', date: 'July 2024'},
 ]
