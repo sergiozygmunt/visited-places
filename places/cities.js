@@ -30,4 +30,5 @@
    {name: 'Austin', latitude: 30.2672, longitude: -97.7431, radius: 3, fillKey: 'city', date: 'August 2023'},
    {name: 'Kansas City', latitude: 39.1155, longitude: -94.6268, radius: 3, fillKey: 'city', date: 'July 2024'},
    {name: 'Atlanta', latitude: 33.7488, longitude: -84.3877, radius: 3, fillKey: 'city', date: 'July 2024'},
+   {name: 'Tempe', latitude: 33.4255, longitude: -111.9400, radius: 3, fillKey: 'city', date: 'September 2024'},
 ]
