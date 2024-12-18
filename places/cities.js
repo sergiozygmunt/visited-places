@@ -11,7 +11,7 @@
    {name: 'San Francisco', latitude: 37.7749, longitude: -122.4194, radius: 3, fillKey: 'city', date: 'August 2016, September 2018; March 2021, March 2024'},
    {name: 'Rome', latitude: 41.9028, longitude: 12.4964, radius: 3, fillKey: 'city', date: 'August 2007, July 2012'},
    {name: 'Orlando', latitude: 28.5384, longitude: -81.3789, radius: 3, fillKey: 'city', date: 'July 2014'},
-   {name: 'Las Vegas', latitude: 36.1699, longitude: -115.1398, radius: 3, fillKey: 'city', date: 'September 2021, August 2022, November 2022; December 2022'},
+   {name: 'Las Vegas', latitude: 36.1699, longitude: -115.1398, radius: 3, fillKey: 'city', date: 'September 2021, August 2022, November 2022; December 2022; December 2024'},
    {name: 'Vernon', latitude: 43.074333036 , longitude: -75.537331184, radius: 3, fillKey: 'city', date: 'April 2018, May 2018'},
    {name: 'Los Angeles', latitude: 33.9416, longitude: -118.4085, radius: 3, fillKey: 'city', date: 'July 2011, April 2024, May 2024, June 2024'},
    {name: 'Aliso Viejo', latitude: 33.5685, longitude: -117.7263, radius: 3, fillKey: 'city', date: 'July 2011, August 2016'},
